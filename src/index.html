@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="shortcut icon" href="#"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js"></script>
+    
+    <link rel="stylesheet" href="./index_style.css">
+    <script src="./main.js"></script>
+    <script src="./Encrypting.js"></script>
+    <script src="./funs.js"></script>
+</head>
+<body>
+        <div id="content">
+            <div class="row">
+                <div class="column">
+                    <div class="card"
+                        onclick="add_open()">
+                        <h3>Add</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="light" class="white_content">
+            <a style="float:right;" href="javascript:void(0)" onclick="pass_delete()">Delete</a>
+            <div>
+                <table>
+                    <tr>
+                        <td> Master Key</td>
+                        <td> <input type="password" id="Master_key" onchange="get_key()"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button onclick="get_key()">GET</button><br></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="password" id="pass_display" readonly></td>
+                        <td> <button onclick="navigator.clipboard.writeText(document.getElementById('pass_display').value);alert('Copied!')">copy</button> </td>
+                    </tr>
+                </table>
+                <input type="hidden" id="service"><br>
+            </div>
+        </div>
+        </div>
+        <div id="fade" onclick="get_pass_close();set_pass_close()" class="black_overlay"></div>
+            
+        <div id="light_add" class="white_content">
+            <div>
+                <table>
+                    <tr>
+                        <td>Name</td>
+                        <td><input type="text" id="service_name"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td> Password</td>
+                        <td><input type="password" id="add_passowrd"></td>
+                        <td><button onclick="random_pass_genetor()">Random</button></td>
+                    </tr>
+                    <tr>
+                        <td> Master Key</td>
+                        <td> <input type="password" id="add_Master_key"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button onclick="set_key()">ADD</button></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <input type="hidden" id="service"><br>
+            </div>
+        </div>
+</body>
+</html>
