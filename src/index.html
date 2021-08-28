@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Passmage</title>
     <link rel="shortcut icon" href="#"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -14,35 +15,62 @@
     <div id="content">
         <div class="row">
             <div class="column">
-                <div class="card"
-                    onclick="add_open()">
+                <div class="card" onclick="add_open()">
                     <h3>Add</h3>
                 </div>
             </div>
         </div>
     </div>
     <div id="light" class="white_content">
-        <a  style="text-align:left;" href="javascript:void(0)" onclick="get_pass_close()">Close</a> 
-        <a style="float:right;" href="javascript:void(0)" onclick="pass_delete()">Delete</a>
+        <a class="close_link" href="javascript:void(0)" onclick="get_pass_close()">Close</a> 
+        <a class="delete_link" href="javascript:void(0)" onclick="pass_delete()">Delete</a>
         <div>
-            Master Key:<input type="password" id="Master_key" onchange="get_key()"><br>
+            <table class="center">
+                <tr>
+                    <td> Master Key:</td>
+                    <td><input type="password" id="Master_key" onchange="get_key()"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td> <button onclick="get_key()">GET</button></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input id="pass_display" readonly></td>
+                </tr>
+            </table>
             <input type="hidden" id="service"><br>
-            <button onclick="get_key()">GET</button><br>
-            <input id="pass_display" readonly>
         </div>
     </div>
     </div>
-    <div id="fade" class="black_overlay"></div>
+    <div onclick="get_pass_close();set_pass_close();" id="fade" class="black_overlay"></div>
         
     <div id="light_add" class="white_content">
-        <a href="javascript:void(0)" onclick="set_pass_close()">Close</a>
+        <a class="close_link" href="javascript:void(0)" onclick="set_pass_close()">Close</a>
         <div>
-            Name:<input type="text" id="service_name"><br>
-            Password:<input type="password" id="add_passowrd"> <button onclick="random_pass_genetor()">Random</button> <br>
-            Master Key:<input type="password" id="add_Master_key"><br>
+            <table class="center">
+                <tr>
+                    <td>Name:</td>
+                    <td> <input type="text" id="service_name"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>  Password:</td>
+                    <td> <input type="password" id="add_passowrd"></td>
+                    <td> <button onclick="random_pass_genetor()">Random</button></td>
+                </tr>
+                <tr>
+                    <td> Master Key:</td>
+                    <td><input type="password" id="add_Master_key"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td> <button onclick="set_key()">ADD</button></td>
+                    <td></td>
+                </tr>
+            </table>
             <input type="hidden" id="service"><br>
-            <button onclick="set_key()">ADD</button>
         </div>
     </div>
-</body>
 </html>

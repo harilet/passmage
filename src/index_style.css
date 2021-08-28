@@ -80,3 +80,19 @@
 .white_content a{
     text-align: right;
 }
+
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close_link{
+  text-align:left;
+  text-decoration: none;
+}
+.delete_link{
+  float:right;
+  text-decoration: none;
+  color: tomato;
+}
